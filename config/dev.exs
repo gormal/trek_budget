@@ -1,9 +1,15 @@
 import Config
 
-
 # Configure your database
-config :trek_budget,
-  ecto_repos: [TrekBudget.Repo]
+config :trek_budget, TrekBudget.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  database: "trek_budget_dev",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -17,11 +23,8 @@ config :trek_budget, TrekBudgetWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "OoZFCVUHufDMKnqB4iCrpTdcgQT9/56IKJia82xOPZa4ouSO0Qt/OLImW1oUrcW2",
-  watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
-  ]
+  secret_key_base: "1fTxYGpqdZGZSV3LLKrU2NkYfK4KVchmIDYBFnWO86ffcfsf5CWvXfOk9uvcEkJc",
+  watchers: []
 
 # ## SSL Support
 #
@@ -46,16 +49,6 @@ config :trek_budget, TrekBudgetWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :trek_budget, TrekBudgetWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/trek_budget_web/(controllers|live|components)/.*(ex|heex)$"
-    ]
-  ]
-
 # Enable dev routes for dashboard and mailbox
 config :trek_budget, dev_routes: true
 
@@ -68,6 +61,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false

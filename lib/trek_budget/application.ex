@@ -14,8 +14,6 @@ defmodule TrekBudget.Application do
       TrekBudget.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: TrekBudget.PubSub},
-      # Start Finch
-      {Finch, name: TrekBudget.Finch},
       # Start the Endpoint (http/https)
       TrekBudgetWeb.Endpoint
       # Start a worker by calling: TrekBudget.Worker.start_link(arg)

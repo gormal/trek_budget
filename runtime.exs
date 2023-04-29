@@ -3,15 +3,6 @@ import Dotenvy
 
 source!([".env.#{config_env()}", System.get_env()])
 
-config :trek_budget, TrekBudget.Repo,
-  username: env!("POSTGRES_USERNAME", :string!),
-  password: env!("POSTGRES_PASSWORD", :string!),
-  hostname: env!("POSTGRES_HOSTNAME", :string!),
-  database: env!("POSTGRES_DATABASE", :string!),
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: env!("POSTGRES_POOL_SIZE", :integer!)
-
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
@@ -28,6 +19,16 @@ config :trek_budget, TrekBudget.Repo,
 #
 # Alternatively, you can use `mix phx.gen.release` to generate a `bin/server`
 # script that automatically sets the env var above.
+
+config :trek_budget, TrekBudget.Repo,
+  username: env!("POSTGRES_USERNAME", :string!),
+  password: env!("POSTGRES_PASSWORD", :string!),
+  hostname: env!("POSTGRES_HOSTNAME", :string!),
+  database: env!("POSTGRES_DATABASE", :string!),
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: env!("POSTGRES_POOL_SIZE", :integer!)
+
 if System.get_env("PHX_SERVER") do
   config :trek_budget, TrekBudgetWeb.Endpoint, server: true
 end
@@ -106,4 +107,22 @@ if config_env() == :prod do
   #       force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
+
+  # ## Configuring the mailer
+  #
+  # In production you need to configure the mailer to use a different adapter.
+  # Also, you may need to configure the Swoosh API client of your choice if you
+  # are not using SMTP. Here is an example of the configuration:
+  #
+  #     config :trek_budget, TrekBudget.Mailer,
+  #       adapter: Swoosh.Adapters.Mailgun,
+  #       api_key: System.get_env("MAILGUN_API_KEY"),
+  #       domain: System.get_env("MAILGUN_DOMAIN")
+  #
+  # For this example you need include a HTTP client required by Swoosh API client.
+  # Swoosh supports Hackney and Finch out of the box:
+  #
+  #     config :swoosh, :api_client, Swoosh.ApiClient.Hackney
+  #
+  # See https://hexdocs.pm/swoosh/Swoosh.html#module-installation for details.
 end

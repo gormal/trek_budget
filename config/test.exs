@@ -17,14 +17,8 @@ config :trek_budget, TrekBudget.Repo,
 # you can enable the server option below.
 config :trek_budget, TrekBudgetWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "LPNCEimxlzsRDs9oIaX8NIvq2nLin4xO1ZbnbFbh2gyDGps9ahBPrIyUzwdUpWtE",
+  secret_key_base: "VSyFryHmqTnEkmFXS9yrvH/kMfy+V/LCaIhaDsc5FDQ9uPrD0ZTd/1x4pHq89HGp",
   server: false
-
-# In test we don't send emails.
-config :trek_budget, TrekBudget.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning
