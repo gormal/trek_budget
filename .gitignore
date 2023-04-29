@@ -35,5 +35,4 @@ trek_budget-*.tar
 npm-debug.log
 /assets/node_modules/
 
-config/local.secrets.exs
-
+.env.dev
