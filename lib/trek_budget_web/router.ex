@@ -7,5 +7,6 @@ defmodule TrekBudgetWeb.Router do
 
   scope "/api", TrekBudgetWeb do
     pipe_through :api
+    resources "/trips", TripController
   end
 end
