@@ -79,7 +79,8 @@ defmodule TrekBudget.TrackerTest do
     end
 
     test "create_expense/1 with valid data creates a expense" do
-      valid_attrs = %{amount: 120.5, category: "some category", currency: "some currency", date: ~D[2023-05-01], description: "some description"}
+      trip = trip_fixture()
+      valid_attrs = %{trip_id: trip.id, amount: 120.5, category: "some category", currency: "some currency", date: ~D[2023-05-01], description: "some description"}
 
       assert {:ok, %Expense{} = expense} = Tracker.create_expense(valid_attrs)
       assert expense.amount == 120.5

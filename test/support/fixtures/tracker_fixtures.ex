@@ -24,6 +24,15 @@ defmodule TrekBudget.TrackerFixtures do
   Generate a expense.
   """
   def expense_fixture(attrs \\ %{}) do
+    {:ok, trip} =
+      %{}
+      |> Enum.into(%{
+        end_date: ~D[2023-05-01],
+        name: "some name",
+        start_date: ~D[2023-05-01]
+      })
+      |> TrekBudget.Tracker.create_trip()
+
     {:ok, expense} =
       attrs
       |> Enum.into(%{
@@ -31,7 +40,8 @@ defmodule TrekBudget.TrackerFixtures do
         category: "some category",
         currency: "some currency",
         date: ~D[2023-05-01],
-        description: "some description"
+        description: "some description",
+        trip_id: trip.id
       })
       |> TrekBudget.Tracker.create_expense()
 

@@ -8,6 +8,7 @@ defmodule TrekBudget.Tracker.Trip do
     field :end_date, :date
     field :name, :string
     field :start_date, :date
+    has_many :expenses, TrekBudget.Tracker.Expense
 
     timestamps()
   end

@@ -10,7 +10,7 @@ defmodule TrekBudget.Tracker.Expense do
     field :currency, :string
     field :date, :date
     field :description, :string
-    field :trip_id, :binary_id
+    belongs_to :trip, TrekBudget.Tracker.Trip
 
     timestamps()
   end
@@ -18,7 +18,7 @@ defmodule TrekBudget.Tracker.Expense do
   @doc false
   def changeset(expense, attrs) do
     expense
-    |> cast(attrs, [:amount, :currency, :category, :description, :date])
-    |> validate_required([:amount, :currency, :category, :description, :date])
+    |> cast(attrs, [:trip_id, :amount, :currency, :category, :description, :date])
+    |> validate_required([:trip_id, :amount, :currency, :category, :description, :date])
   end
 end
