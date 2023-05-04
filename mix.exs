@@ -42,7 +42,9 @@ defmodule TrekBudget.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dotenvy, "~> 0.6.0"}
+      {:dotenvy, "~> 0.6.0"},
+      {:guardian, "~> 2.3"},
+      {:pbkdf2_elixir, "~> 2.0"}
     ]
   end
 

@@ -6,7 +6,7 @@ defmodule TrekBudget.Users.User do
   @foreign_key_type :binary_id
   schema "users" do
     field :full_name, :string
-    belongs_to :accounts, TrekBudget.Accounts.Account
+    belongs_to :account, TrekBudget.Accounts.Account
 
     timestamps()
   end

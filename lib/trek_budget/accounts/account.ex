@@ -7,7 +7,7 @@ defmodule TrekBudget.Accounts.Account do
   schema "accounts" do
     field :email, :string
     field :hash_password, :string
-    has_one :user, TrekBudget.Tracker.Users.User
+    has_one :user, TrekBudget.Users.User
 
     timestamps()
   end
@@ -20,5 +20,12 @@ defmodule TrekBudget.Accounts.Account do
     |> validate_format(:email, ~r/^[^\s]+@[^\s]+$/, message: "must have the @ sign and no spaces")
     |> validate_length(:email, max: 160)
     |> unique_constraint(:email)
+    |> put_password_hash()
   end
+
+  defp put_password_hash(%Ecto.Changeset{valid?: true, changes: %{hash_password: hash_password}} = changeset) do
+    change(changeset, hash_password: Pbkdf2.hash_pwd_salt(hash_password))
+  end
+
+  defp put_password_hash(changeset), do: changeset
 end

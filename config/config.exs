@@ -29,6 +29,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :trek_budget, TrekBudgetWeb.Auth.Guardian,
+  issuer: "trek_budget",
+  secret_key: "T5qCnj9AkKWNSrbiJzcRrI5esytlToTdv7RWd0UYDIHvNANbKLrLr+HJRIwd1ptv"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
