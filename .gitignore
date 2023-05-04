@@ -26,3 +26,5 @@ erl_crash.dump
 trek_budget-*.tar
 
 .env.*
+revolut.csr
+private.key
