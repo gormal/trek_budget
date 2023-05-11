@@ -15,7 +15,6 @@ defmodule TrekBudgetWeb.TripController do
     with {:ok, %Trip{} = trip} <- Tracker.create_trip(trip_params) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/trips/#{trip}")
       |> render(:show, trip: trip)
     end
   end

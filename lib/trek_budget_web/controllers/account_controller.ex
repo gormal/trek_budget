@@ -25,6 +25,7 @@ defmodule TrekBudgetWeb.AccountController do
     case Guardian.authenticate(email, hash_password) do
       {:ok, account, token} ->
         conn
+        |> Plug.Conn.put_session(:account_id, account.id)
         |> put_status(:ok)
         |> render(:show, %{account: account, token: token})
       {:error, :unauthorized} ->
@@ -33,8 +34,8 @@ defmodule TrekBudgetWeb.AccountController do
   end
 
   def show(conn, %{"id" => id}) do
-    account = Accounts.get_account!(id)
-    render(conn, :show, account: account)
+    # account = Accounts.get_account!(id)
+    render(conn, :show, account: conn.assigns.account)
   end
 
   def update(conn, %{"id" => id, "account" => account_params}) do

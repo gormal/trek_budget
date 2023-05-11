@@ -15,12 +15,8 @@ defmodule TrekBudgetWeb.AccountJSON do
     %{data: data(account, token)}
   end
 
-  defp data(%Account{} = account) do
-    %{
-      id: account.id,
-      email: account.email,
-      hash_password: account.hash_password
-    }
+  def show(%{account: account}) do
+    %{data: data(account)}
   end
 
   defp data(%Account{} = account, token) do
@@ -28,6 +24,13 @@ defmodule TrekBudgetWeb.AccountJSON do
       id: account.id,
       email: account.email,
       token: token
+    }
+  end
+
+  defp data(%Account{} = account) do
+    %{
+      id: account.id,
+      email: account.email,
     }
   end
 end
