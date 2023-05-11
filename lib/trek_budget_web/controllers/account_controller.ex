@@ -1,8 +1,8 @@
 defmodule TrekBudgetWeb.AccountController do
   use TrekBudgetWeb, :controller
 
-  alias TrekBudget.Accounts
-  alias TrekBudget.Accounts.Account
+  alias TrekBudgetWeb.{Auth.ErrorResponse, Auth.Guardian}
+  alias TrekBudget.{Accounts, Accounts.Account, Users, Users.User}
 
   action_fallback TrekBudgetWeb.FallbackController
 
@@ -12,10 +12,23 @@ defmodule TrekBudgetWeb.AccountController do
   end
 
   def create(conn, %{"account" => account_params}) do
-    with {:ok, %Account{} = account} <- Accounts.create_account(account_params) do
+    with {:ok, %Account{} = account} <- Accounts.create_account(account_params),
+         {:ok, token, _claims} <- Guardian.encode_and_sign(account),
+         {:ok, %User{} = _user} <- Users.create_user(account, account_params) do
       conn
       |> put_status(:created)
-      |> render(:show, account: account)
+      |> render(:show, %{account: account, token: token})
+    end
+  end
+
+  def sign_in(conn, %{"email" => email, "hash_password" => hash_password}) do
+    case Guardian.authenticate(email, hash_password) do
+      {:ok, account, token} ->
+        conn
+        |> put_status(:ok)
+        |> render(:show, %{account: account, token: token})
+      {:error, :unauthorized} ->
+        raise ErrorResponse.Unauthorized, message: "Email or Password incorrect."
     end
   end
 

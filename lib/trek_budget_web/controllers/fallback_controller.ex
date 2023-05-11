@@ -6,18 +6,19 @@ defmodule TrekBudgetWeb.FallbackController do
   """
   use TrekBudgetWeb, :controller
 
-  # This clause is an example of how to handle resources that cannot be found.
-  def call(conn, {:error, :not_found}) do
-    conn
-    |> put_status(:not_found)
-    |> put_view(html: TrekBudgetWeb.ErrorHTML, json: TrekBudgetWeb.ErrorJSON)
-    |> render(:"404")
-  end
-
-  def call(conn, {:error, %Ecto.Changeset{}}) do
+  def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
     conn
     |> put_status(:unprocessable_entity)
-    |> put_view(html: TrekBudgetWeb.ErrorHTML, json: TrekBudgetWeb.ErrorJSON)
-    |> render(:"422")
+    |> put_view(json: TrekBudgetWeb.ChangesetJSON)
+    |> render(:error, changeset: changeset)
+  end
+
+  # This clause is an example of how to handle resources that cannot be found.
+  def call(conn, {:error, :not_found}) do
+
+    conn
+    |> put_status(:not_found)
+    |> put_view(json: TrekBudgetWeb.ErrorJSON)
+    |> render(:"404")
   end
 end
