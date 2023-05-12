@@ -2,15 +2,15 @@ defmodule TrekBudgetWeb.Router do
   use TrekBudgetWeb, :router
   use Plug.ErrorHandler
 
-  defp handle_errors(conn, %{reason: %Phoenix.Router.NoRouteError{message: message}}) do
+  def handle_errors(conn, %{reason: %Phoenix.Router.NoRouteError{message: message}}) do
     conn |> json(%{errors: message}) |> halt()
   end
 
-  defp handle_errors(conn, %{reason: %{message: message}}) do
+  def handle_errors(conn, %{reason: %{message: message}}) do
     conn |> json(%{errors: message}) |> halt()
   end
 
-  defp handle_errors(conn, anything) do
+  def handle_errors(conn, anything) do
     IO.inspect(anything)
     conn |> halt()
   end
@@ -35,5 +35,6 @@ defmodule TrekBudgetWeb.Router do
     pipe_through [:api, :auth]
     resources "/trips", TripController
     get "/accounts/:id", AccountController, :show
+    post "/accounts/update", AccountController, :update
   end
 end

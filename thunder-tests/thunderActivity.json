@@ -1,0 +1,193 @@
+[
+  {
+    "_id": "f6983614-5889-42f3-86e7-dbbc5adad5ac",
+    "colId": "history",
+    "containerId": "",
+    "name": "Create account",
+    "url": "http://localhost:4000/accounts/create",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T16:29:00.558Z",
+    "modified": "2023-05-12T16:29:00.558Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"account\" :\n  {\n   \"email\": \"user1@test.cz\",\n   \"hash_password\": \"passwd\",\n   \"full_name\": \"user 1\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "96f3d36a-e4e8-43a5-b672-d6115f6a8250",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/accounts/create",
+    "url": "http://localhost:4000/accounts/create",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T16:33:51.004Z",
+    "modified": "2023-05-12T16:33:51.004Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"account\" :\n  {\n   \"email\": \"user1@test.cz\",\n   \"hash_password\": \"passwd\",\n   \"full_name\": \"user 1\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "92a63f4a-a649-4aae-b554-3f6376f7f3e0",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/apiaccounts/create",
+    "url": "http://localhost:4000/apiaccounts/create",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T16:34:01.835Z",
+    "modified": "2023-05-12T16:34:01.835Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"account\" :\n  {\n   \"email\": \"user1@test.cz\",\n   \"hash_password\": \"passwd\",\n   \"full_name\": \"user 1\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e4382e0c-d947-4af3-bbcb-b2f995beb0e2",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/api/accounts/create",
+    "url": "http://localhost:4000/api/accounts/create",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T16:34:21.131Z",
+    "modified": "2023-05-12T16:34:21.131Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"account\" :\n  {\n   \"email\": \"user1@test.cz\",\n   \"hash_password\": \"passwd\",\n   \"full_name\": \"user 1\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b55477f7-6600-4e37-87db-6e43487997df",
+    "colId": "history",
+    "containerId": "",
+    "name": "sign_in",
+    "url": "http://localhost:4000/api/accounts/sign_in",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T17:32:51.972Z",
+    "modified": "2023-05-12T17:32:51.972Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c3c9b7fa-0e35-4813-ac5b-848af3fc5f6a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/api/accounts/sign_in",
+    "url": "http://localhost:4000/api/accounts/sign_in",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T17:33:24.436Z",
+    "modified": "2023-05-12T17:33:24.436Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3dece80f-0668-4f75-8bd4-045a1fc59d5a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/api/accounts/sign_in",
+    "url": "http://localhost:4000/api/accounts/sign_in",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-05-12T17:33:34.430Z",
+    "modified": "2023-05-12T17:33:34.430Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2226fa4f-d08f-4e2e-85d0-df7ecf978ae3",
+    "colId": "history",
+    "containerId": "",
+    "name": "Update account",
+    "url": "https://www.thunderclient.com/welcome",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-12T18:00:18.695Z",
+    "modified": "2023-05-12T18:00:18.695Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
