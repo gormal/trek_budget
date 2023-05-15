@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-05-12T16:32:20.716Z",
-    "modified": "2023-05-12T17:53:14.150Z",
+    "modified": "2023-05-15T16:31:00.937Z",
     "headers": [
       {
         "name": "Accept",
@@ -38,7 +38,7 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-05-12T17:33:18.459Z",
-    "modified": "2023-05-12T18:57:39.178Z",
+    "modified": "2023-05-15T17:56:39.560Z",
     "headers": [],
     "params": [],
     "body": {
@@ -57,11 +57,11 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-05-12T18:00:46.463Z",
-    "modified": "2023-05-12T19:31:35.492Z",
+    "modified": "2023-05-15T16:35:28.146Z",
     "headers": [
       {
         "name": "Authorization",
-        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjMzOTA1NSwiaWF0IjoxNjgzOTE5ODU1LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjE1MDJlOTgzLTc2NTQtNDU4Ny1iN2ZiLTFhNmMzNWNhMmM2YiIsIm5iZiI6MTY4MzkxOTg1NCwic3ViIjoiODFhMTA1ZWQtMDRmOS00ZjZlLTgzNTYtNDBmZmYxZTBmZGFlIiwidHlwIjoiYWNjZXNzIn0.mHwiEfuppZRA6ZffDoGSZiHzbPv9jrA3QQ0ZF8mhgx9MvDWie4bN85U-CrrjQQzu-0ElOfJzmjwC2Uzdy0fFWA"
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU4NzcwNiwiaWF0IjoxNjg0MTY4NTA2LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjdmZDZiYzg2LWY2MzctNDNiNS1iZGUyLWM1ZjY5MDMzNWNhMyIsIm5iZiI6MTY4NDE2ODUwNSwic3ViIjoiOTI0YzcxZTItODQ4YS00ZmY1LTg2OWEtMmQ4YTJlMmExZDQ3IiwidHlwIjoiYWNjZXNzIn0.evNrS5IZCHSCMrlu6xQJUO8H3RZ1Brq3q7tv_ZEhAxTovOUVNm10_hRSJO72A5GlSc3il537jAaJR56pIKyzSQ"
       },
       {
         "name": "Accept",
@@ -77,9 +77,72 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"id\": \"81a105ed-04f9-4f6e-8356-40fff1e0fdae\",\n    \"hash_password\": \"bla\"\n}",
+      "raw": "{\n  \"accosunt\": {\n    \"id\": \"924c71e2-848a-4ff5-869a-2d8a2e2a1d47\",\n    \"hash_password\": \"bla\"\n  }\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "66031c14-274f-4f50-b3dd-c7171203cfcc",
+    "colId": "3122e300-7fc5-4063-8c25-6f4871732d8b",
+    "containerId": "",
+    "name": "Get account",
+    "url": "http://localhost:4000/api/accounts/ff4f7451-8bf6-44d0-9b2a-513ea35fa075",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-05-15T18:01:03.792Z",
+    "modified": "2023-05-15T18:05:52.694Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MzE0MCwiaWF0IjoxNjg0MTczOTQwLCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImRlZTEwZjVlLTQ3NzQtNGU2Zi1iMzU0LTcyNGNjNWFkYzJkZSIsIm5iZiI6MTY4NDE3MzkzOSwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.dDbcHlSv0vwP9YmNARIdenE8PnjYcCanFmh3JsMMgBVHIH3jwNZfG4jPkNvihG72AuSKUllJ-4BY9M6lB8YQ6Q"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "90f02baa-62ab-4d87-9338-3b0025c4939c",
+    "colId": "3122e300-7fc5-4063-8c25-6f4871732d8b",
+    "containerId": "",
+    "name": "sign out",
+    "url": "http://localhost:4000/api/accounts/sign_out",
+    "method": "PUT",
+    "sortNum": 50000,
+    "created": "2023-05-15T18:03:54.685Z",
+    "modified": "2023-05-15T18:05:09.601Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MjU5OSwiaWF0IjoxNjg0MTczMzk5LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImVjYjI5YjY5LTA4NWQtNDkyNi1iOTkzLWUzNmQ1ZThjZGFkNyIsIm5iZiI6MTY4NDE3MzM5OCwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.IasNJlXTG86Si-xVP1m_MuqPKdcoimNUR870qP_UglpdUDKLHBi1oZbQJwQhU8z6lcyi6AFbZfiy07eqfC4bhw"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
     "tests": []
   }
 ]

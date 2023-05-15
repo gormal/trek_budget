@@ -29,6 +29,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :guardian, Guardian.DB,
+  repo: TrekBudget.Repo,
+  schema_name: "guardian_tokens",
+  sweep_interval: 60
+
 config :trek_budget, TrekBudgetWeb.Auth.Guardian,
   issuer: "trek_budget",
   secret_key: "T5qCnj9AkKWNSrbiJzcRrI5esytlToTdv7RWd0UYDIHvNANbKLrLr+HJRIwd1ptv"

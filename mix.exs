@@ -44,6 +44,7 @@ defmodule TrekBudget.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dotenvy, "~> 0.6.0"},
       {:guardian, "~> 2.3"},
+      {:guardian_db, "~> 2.0"},
       {:pbkdf2_elixir, "~> 2.0"}
     ]
   end
@@ -58,7 +59,7 @@ defmodule TrekBudget.MixProject do
     [
       setup: ["deps.get", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "ecto.reset": ["ecto.drop --force-drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end

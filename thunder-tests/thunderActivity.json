@@ -142,32 +142,57 @@
     "_id": "c3c9b7fa-0e35-4813-ac5b-848af3fc5f6a",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:4000/api/accounts/sign_in",
-    "url": "http://localhost:4000/api/accounts/sign_in",
-    "method": "GET",
+    "name": "sign out",
+    "url": "http://localhost:4000/api/accounts/sign_out",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-05-12T17:33:24.436Z",
-    "modified": "2023-05-12T17:33:24.436Z",
-    "headers": [],
+    "modified": "2023-05-15T18:06:09.772Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MzE0MCwiaWF0IjoxNjg0MTczOTQwLCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImRlZTEwZjVlLTQ3NzQtNGU2Zi1iMzU0LTcyNGNjNWFkYzJkZSIsIm5iZiI6MTY4NDE3MzkzOSwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.dDbcHlSv0vwP9YmNARIdenE8PnjYcCanFmh3JsMMgBVHIH3jwNZfG4jPkNvihG72AuSKUllJ-4BY9M6lB8YQ6Q"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
     "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
-      "form": []
-    },
     "tests": []
   },
   {
     "_id": "3dece80f-0668-4f75-8bd4-045a1fc59d5a",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:4000/api/accounts/sign_in",
-    "url": "http://localhost:4000/api/accounts/sign_in",
-    "method": "POST",
+    "name": "Get account",
+    "url": "http://localhost:4000/api/accounts/ff4f7451-8bf6-44d0-9b2a-513ea35fa075",
+    "method": "GET",
     "sortNum": 0,
     "created": "2023-05-12T17:33:34.430Z",
-    "modified": "2023-05-12T17:33:34.430Z",
-    "headers": [],
+    "modified": "2023-05-15T18:00:05.176Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MjU5OSwiaWF0IjoxNjg0MTczMzk5LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImVjYjI5YjY5LTA4NWQtNDkyNi1iOTkzLWUzNmQ1ZThjZGFkNyIsIm5iZiI6MTY4NDE3MzM5OCwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.IasNJlXTG86Si-xVP1m_MuqPKdcoimNUR870qP_UglpdUDKLHBi1oZbQJwQhU8z6lcyi6AFbZfiy07eqfC4bhw"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
     "params": [],
     "body": {
       "type": "json",
