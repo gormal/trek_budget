@@ -31,6 +31,7 @@ defmodule TrekBudgetWeb.AccountJSON do
     %{
       id: account.id,
       email: account.email,
+      full_name: account.user.full_name
     }
   end
 end
