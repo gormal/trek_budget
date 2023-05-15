@@ -37,5 +37,6 @@ defmodule TrekBudgetWeb.Router do
     get "/accounts/:id", AccountController, :show
     post "/accounts/update", AccountController, :update
     put "/accounts/sign_out", AccountController, :sign_out
+    put "/accounts/refresh_session", AccountController, :refresh_session
   end
 end

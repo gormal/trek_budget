@@ -38,8 +38,19 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-05-12T17:33:18.459Z",
-    "modified": "2023-05-15T17:56:39.560Z",
-    "headers": [],
+    "modified": "2023-05-15T18:55:36.437Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
     "params": [],
     "body": {
       "type": "json",
@@ -87,15 +98,15 @@
     "colId": "3122e300-7fc5-4063-8c25-6f4871732d8b",
     "containerId": "",
     "name": "Get account",
-    "url": "http://localhost:4000/api/accounts/ff4f7451-8bf6-44d0-9b2a-513ea35fa075",
+    "url": "http://localhost:4000/api/accounts/7d14b14e-31b1-487b-ba81-07c7360eb3ea",
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-05-15T18:01:03.792Z",
-    "modified": "2023-05-15T18:05:52.694Z",
+    "modified": "2023-05-15T18:57:38.050Z",
     "headers": [
       {
         "name": "Authorization",
-        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MzE0MCwiaWF0IjoxNjg0MTczOTQwLCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImRlZTEwZjVlLTQ3NzQtNGU2Zi1iMzU0LTcyNGNjNWFkYzJkZSIsIm5iZiI6MTY4NDE3MzkzOSwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.dDbcHlSv0vwP9YmNARIdenE8PnjYcCanFmh3JsMMgBVHIH3jwNZfG4jPkNvihG72AuSKUllJ-4BY9M6lB8YQ6Q"
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5NjE1MywiaWF0IjoxNjg0MTc2OTUzLCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjQ3YTE1NjkwLWYzNzEtNGU4MC1iNDJiLTU2NWUxNWNhMzE1NyIsIm5iZiI6MTY4NDE3Njk1Miwic3ViIjoiN2QxNGIxNGUtMzFiMS00ODdiLWJhODEtMDdjNzM2MGViM2VhIiwidHlwIjoiYWNjZXNzIn0.XmEv_qk2rap-wgiBQTAWDzUZiEKFFsI5d4ZzzveqRTzNoIMJ-s44MUz-v_LR4uT6gBUS7H6Nt44L-hHuHiAU4Q"
       },
       {
         "name": "Accept",
@@ -130,6 +141,35 @@
       {
         "name": "Authorization",
         "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5MjU5OSwiaWF0IjoxNjg0MTczMzk5LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6ImVjYjI5YjY5LTA4NWQtNDkyNi1iOTkzLWUzNmQ1ZThjZGFkNyIsIm5iZiI6MTY4NDE3MzM5OCwic3ViIjoiZmY0Zjc0NTEtOGJmNi00NGQwLTliMmEtNTEzZWEzNWZhMDc1IiwidHlwIjoiYWNjZXNzIn0.IasNJlXTG86Si-xVP1m_MuqPKdcoimNUR870qP_UglpdUDKLHBi1oZbQJwQhU8z6lcyi6AFbZfiy07eqfC4bhw"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "4af62924-e16e-4216-8eef-40476850536e",
+    "colId": "3122e300-7fc5-4063-8c25-6f4871732d8b",
+    "containerId": "",
+    "name": "refresh",
+    "url": "http://localhost:4000/api/accounts/refresh_session",
+    "method": "PUT",
+    "sortNum": 60000,
+    "created": "2023-05-15T18:54:48.611Z",
+    "modified": "2023-05-15T18:55:54.054Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU5NjEzNiwiaWF0IjoxNjg0MTc2OTM2LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjRjOTY3NjdmLTQ0NWUtNDk2Mi1iMjY0LWVhOGFiYzU4YmYzNyIsIm5iZiI6MTY4NDE3NjkzNSwic3ViIjoiN2QxNGIxNGUtMzFiMS00ODdiLWJhODEtMDdjNzM2MGViM2VhIiwidHlwIjoiYWNjZXNzIn0.wOZZL4IYaVRn_OpLBsMH-DS-umuw1VyD1YtqoYo2oJG5huVNggiLgCIRv_Tj3ENJikqBGFwUaKJbMpIB97dMLQ"
       },
       {
         "name": "Accept",
