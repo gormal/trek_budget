@@ -43,7 +43,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"bla\"\n}",
+      "raw": "{\n  \"email\": \"user2@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
       "form": []
     },
     "tests": []
