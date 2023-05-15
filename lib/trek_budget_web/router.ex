@@ -36,5 +36,6 @@ defmodule TrekBudgetWeb.Router do
     resources "/trips", TripController
     get "/accounts/:id", AccountController, :show
     post "/accounts/update", AccountController, :update
+    get "/accounts/sign_out", AccountController, :sign_out
   end
 end

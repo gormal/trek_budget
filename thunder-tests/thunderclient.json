@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-05-12T16:32:20.716Z",
-    "modified": "2023-05-12T17:53:14.150Z",
+    "modified": "2023-05-15T16:31:00.937Z",
     "headers": [
       {
         "name": "Accept",
@@ -38,12 +38,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-05-12T17:33:18.459Z",
-    "modified": "2023-05-12T18:57:39.178Z",
+    "modified": "2023-05-15T16:35:06.435Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"user1@test.cz\",\n  \"hash_password\": \"bla\"\n}",
+      "raw": "{\n  \"email\": \"user2@test.cz\",\n  \"hash_password\": \"passwd\"\n}",
       "form": []
     },
     "tests": []
@@ -57,11 +57,11 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-05-12T18:00:46.463Z",
-    "modified": "2023-05-12T19:31:35.492Z",
+    "modified": "2023-05-15T16:35:28.146Z",
     "headers": [
       {
         "name": "Authorization",
-        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjMzOTA1NSwiaWF0IjoxNjgzOTE5ODU1LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjE1MDJlOTgzLTc2NTQtNDU4Ny1iN2ZiLTFhNmMzNWNhMmM2YiIsIm5iZiI6MTY4MzkxOTg1NCwic3ViIjoiODFhMTA1ZWQtMDRmOS00ZjZlLTgzNTYtNDBmZmYxZTBmZGFlIiwidHlwIjoiYWNjZXNzIn0.mHwiEfuppZRA6ZffDoGSZiHzbPv9jrA3QQ0ZF8mhgx9MvDWie4bN85U-CrrjQQzu-0ElOfJzmjwC2Uzdy0fFWA"
+        "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0cmVrX2J1ZGdldCIsImV4cCI6MTY4NjU4NzcwNiwiaWF0IjoxNjg0MTY4NTA2LCJpc3MiOiJ0cmVrX2J1ZGdldCIsImp0aSI6IjdmZDZiYzg2LWY2MzctNDNiNS1iZGUyLWM1ZjY5MDMzNWNhMyIsIm5iZiI6MTY4NDE2ODUwNSwic3ViIjoiOTI0YzcxZTItODQ4YS00ZmY1LTg2OWEtMmQ4YTJlMmExZDQ3IiwidHlwIjoiYWNjZXNzIn0.evNrS5IZCHSCMrlu6xQJUO8H3RZ1Brq3q7tv_ZEhAxTovOUVNm10_hRSJO72A5GlSc3il537jAaJR56pIKyzSQ"
       },
       {
         "name": "Accept",
@@ -77,7 +77,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"id\": \"81a105ed-04f9-4f6e-8356-40fff1e0fdae\",\n    \"hash_password\": \"bla\"\n}",
+      "raw": "{\n  \"accosunt\": {\n    \"id\": \"924c71e2-848a-4ff5-869a-2d8a2e2a1d47\",\n    \"hash_password\": \"bla\"\n  }\n}",
       "form": []
     },
     "tests": []

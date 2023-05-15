@@ -4,20 +4,27 @@ defmodule TrekBudgetWeb.AccountController do
   alias TrekBudgetWeb.{Auth.ErrorResponse, Auth.Guardian}
   alias TrekBudget.{Accounts, Accounts.Account, Users, Users.User}
 
+  plug :is_valid_input when action in [:delete, :update]
   plug :is_authorized_account when action in [:update, :delete]
 
-  defp is_authorized_account(conn, _opts) do
+  defp is_valid_input(conn, _opts) do
     case conn do
-      %{params: %{"account" => params}} ->
-        account = Accounts.get_account!(params["id"])
+      %{params: %{"account" => _params}} ->
+        conn
 
-        if conn.assigns.account.id == account.id do
-          conn
-        else
-          raise ErrorResponse.Forbidden
-        end
+      _ ->
+        raise ErrorResponse.InvalidInput
+    end
+  end
 
-      _ -> raise ErrorResponse.InvalidInput
+  defp is_authorized_account(conn, _opts) do
+    %{params: %{"account" => params}} = conn
+    account = Accounts.get_account!(params["id"])
+
+    if conn.assigns.account.id == account.id do
+      conn
+    else
+      raise ErrorResponse.Forbidden
     end
   end
 
@@ -49,6 +56,16 @@ defmodule TrekBudgetWeb.AccountController do
       {:error, :unauthorized} ->
         raise ErrorResponse.Unauthorized, message: "Email or Password incorrect."
     end
+  end
+
+  def sign_out(conn, %{}) do
+    account = conn.assigns[:account]
+    token = Guardian.Plug.current_token(conn)
+    Guardian.revoke(token)
+    conn
+    |> Plug.Conn.clear_session()
+    |> put_status(:ok)
+    |> render(:show, %{account: account, token: nil})
   end
 
   def show(conn, %{"id" => id}) do
