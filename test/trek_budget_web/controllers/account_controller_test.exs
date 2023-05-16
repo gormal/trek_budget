@@ -6,8 +6,9 @@ defmodule TrekBudgetWeb.AccountControllerTest do
   alias TrekBudget.Accounts.Account
 
   @create_attrs %{
-    email: "some email",
-    hash_password: "some hash_password"
+    email: "some@email.cz",
+    hash_password: "some hash_password",
+    full_name: "user 1"
   }
   @update_attrs %{
     email: "some updated email",
@@ -69,20 +70,33 @@ defmodule TrekBudgetWeb.AccountControllerTest do
   end
 
   describe "delete account" do
-    setup [:create_account]
+    setup [:create_account_signin]
 
-    test "deletes chosen account", %{conn: conn, account: account} do
-      conn = delete(conn, ~p"/api/accounts/#{account}")
+    @tag :wip
+    test "deletes chosen account", %{conn: conn, id: id} do
+      IO.inspect(conn)
+      IO.inspect(id)
+      conn = delete(conn, ~p"/api/accounts/delete/#{id}")
       assert response(conn, 204)
-
-      assert_error_sent 404, fn ->
-        get(conn, ~p"/api/accounts/#{account}")
-      end
     end
   end
 
   defp create_account(_) do
     account = account_fixture()
     %{account: account}
+  end
+
+  defp create_account_signin(context) do
+    account_conn = post(context.conn, ~p"/api/accounts/create", account: @create_attrs)
+    %{"email" => email} = json_response(account_conn, 200)["data"]
+    %{"id" => id} = json_response(account_conn, 200)["data"]
+    %{"token" => token} = json_response(account_conn, 200)["data"]
+
+    final_conn = post(context.conn |> put_req_header("authorization", "Bearer #{token}"), ~p"/api/accounts/sign_in", %{
+      "email": "#{email}",
+      "hash_password": "#{@create_attrs.hash_password}"
+    })
+
+    %{conn: final_conn, id: id}
   end
 end

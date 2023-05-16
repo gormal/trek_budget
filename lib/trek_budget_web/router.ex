@@ -35,6 +35,7 @@ defmodule TrekBudgetWeb.Router do
     pipe_through [:api, :auth]
     resources "/trips", TripController
     get "/accounts/:id", AccountController, :show
+    delete "/accounts/delete/:id", AccountController, :delete
     post "/accounts/update", AccountController, :update
     put "/accounts/sign_out", AccountController, :sign_out
     put "/accounts/refresh_session", AccountController, :refresh_session

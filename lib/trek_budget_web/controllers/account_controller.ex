@@ -9,6 +9,9 @@ defmodule TrekBudgetWeb.AccountController do
 
   defp is_valid_input(conn, _opts) do
     case conn do
+      %{params: %{"id" => _id}} ->
+        conn
+
       %{params: %{"account" => _params}} ->
         conn
 
@@ -18,8 +21,14 @@ defmodule TrekBudgetWeb.AccountController do
   end
 
   defp is_authorized_account(conn, _opts) do
-    %{params: %{"account" => params}} = conn
-    account = Accounts.get_account!(params["id"])
+    id = case conn do
+      %{params: %{"id" => id}} ->
+        id
+
+      %{params: %{"account" => params}} ->
+        params["id"]
+    end
+    account = Accounts.get_account!(id)
 
     if conn.assigns.account.id == account.id do
       conn
@@ -29,11 +38,6 @@ defmodule TrekBudgetWeb.AccountController do
   end
 
   action_fallback TrekBudgetWeb.FallbackController
-
-  def index(conn, _params) do
-    accounts = Accounts.list_accounts()
-    render(conn, :index, accounts: accounts)
-  end
 
   def create(conn, %{"account" => account_params}) do
     with {:ok, %Account{} = account} <- Accounts.create_account(account_params),

@@ -11,7 +11,7 @@ defmodule TrekBudget.AccountsFixtures do
     {:ok, account} =
       attrs
       |> Enum.into(%{
-        email: "some email",
+        email: "some@email.cz",
         hash_password: "some hash_password"
       })
       |> TrekBudget.Accounts.create_account()
